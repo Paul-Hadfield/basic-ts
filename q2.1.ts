@@ -23,11 +23,11 @@ const getThreatLevel = (item: Asset, importance: Importance) => {
 };
 
 const isVessel = (item: RecordTypes): item is Vessel => {
-    return (item as Vessel).vesselId !== undefined
+    return "vesselId" in item
 };
 
 const isAsset = (item: RecordTypes): item is Asset => {
-    return (item as Asset).assetId !== undefined;
+    return "assetId" in item
 };
 
 const sumOfThreatLevels = (
